@@ -2,15 +2,18 @@ package com.mysite.sbb;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
     @GetMapping("/")
-    public void home(){
-        System.out.println("Home page request");
+    @ResponseBody
+    public String home(){
+        return "homepage";
     }
     @GetMapping("/about")
-    public void about(){
-        System.out.println("about request");
+    @ResponseBody
+    public String about(){
+        return "무엇에 대하여";
     }
 }
